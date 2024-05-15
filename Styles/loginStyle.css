@@ -52,7 +52,6 @@ body
 }
 .wrap
 {
-    margin-top: -30%;
     display: grid;
     justify-items: center;
     align-content: center;
