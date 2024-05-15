@@ -36,25 +36,32 @@ function RGBA(mainCode, props) {
         gl.viewport(0, 0, w, h);
     }
 
-    this.resize = (w, h) => {
-        if (canvas.width === (w|0) && canvas.height === (h|0)) return;
-        this.newSize(w, h)
+    this.resize = () => {
+        
+        let coeff = 1;
+        
+        if (screen.width <= 440) {
+            coeff = 1;
+        } else if (screen.width <= 650) {
+            coeff = 0.65;
+        } else {
+            coeff = 0.2;
+        }
+
+        this.newSize(window.innerWidth + (window.innerWidth * coeff), window.innerHeight);
     };
 
-    if (!config.target) {
-        if (false === config.fullscreen)
-            return
-        cavCon.style.margin = 0;
-        cavCon.style.overflow = 'hidden';
-        addEventListener("resize", () => this.resize(innerWidth, innerHeight));
-        this.newSize(innerWidth, innerHeight);
-    } else {
-        this.newSize(canvas.width, canvas.height);
-    }
+    // Initial resize
+    this.resize();
+
+    // Resize event listener
+    window.addEventListener('resize', () => {
+        this.resize();
+    });
 
     if (false !== config.loop) {
         let drawFrame = t => {
-            this.time(t/1000);
+            this.time(t / 1000);
             frameCallbacks.forEach(cb => cb(t));
             gl.drawArrays(gl.TRIANGLES, 0, 3);
             capturer && capturer.capture(canvas);
@@ -70,7 +77,7 @@ function RGBA(mainCode, props) {
         let isFunc = typeof name === 'function';
         if (isFunc)
             name = (Array.isArray(name(0)) ? name(0).length : 1) + 'f';
-        return {name, isFunc, isArray: '1f' !== name}
+        return { name, isFunc, isArray: '1f' !== name }
     }
 
     function handleUniform(uf) {
@@ -78,8 +85,8 @@ function RGBA(mainCode, props) {
         let type = detectUniformType(uf, config);
         let setter = gl[`uniform${type.name}`];
         this[uf] = type.isArray ?
-                v => setter.call(gl, loc, ...v) :
-                v => setter.call(gl, loc, v);
+            v => setter.call(gl, loc, ...v) :
+            v => setter.call(gl, loc, v);
         if (!type.isFunc)
             return
         let val;
@@ -91,7 +98,7 @@ function RGBA(mainCode, props) {
     }
 
     function svgSupport(url) {
-        if(url.indexOf('svg') > -1) {
+        if (url.indexOf('svg') > -1) {
             if (url.indexOf('xmlns') === -1)
                 url = url.split('<svg ').join(`<svg xmlns="http://www.w3.org/2000/svg" `)
             return "data:image/svg+xml;base64," + btoa(url);
@@ -160,7 +167,7 @@ function RGBA(mainCode, props) {
 
         gl.uniform1iv(
             gl.getUniformLocation(program, 'tex'),
-            config.textures.map((_,i) => i));
+            config.textures.map((_, i) => i));
 
         config.textures.forEach((source, index) => {
             if (typeof source === "string") {
@@ -173,4 +180,5 @@ function RGBA(mainCode, props) {
             }
         });
     }
+
 }

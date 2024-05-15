@@ -18,6 +18,7 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
+    overflow: hidden;
 }
 
 .hidden {

@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     });
 
     // Remove all script elements with class "x"
-    const scripts = document.querySelectorAll("script.x");
+    const scripts = document.querySelectorAll("script.loadAnimScripts");
     scripts.forEach(script => {
         script.classList.add("hidden");
         setTimeout(() => {
@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     });
 
     // Remove all div elements with id "y"
-    const divY = document.querySelectorAll("div#cavcon");
+    const divY = document.querySelectorAll("div#cavCon");
     divY.forEach(div => {
         div.classList.add("hidden");
         setTimeout(() => {
