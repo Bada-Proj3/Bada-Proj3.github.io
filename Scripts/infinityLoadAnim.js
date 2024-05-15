@@ -37,18 +37,7 @@ function RGBA(mainCode, props) {
     }
 
     this.resize = () => {
-        
-        let coeff = 1;
-        
-        if (screen.width <= 440) {
-            coeff = 1;
-        } else if (screen.width <= 650) {
-            coeff = 0.65;
-        } else {
-            coeff = 0.2;
-        }
-
-        this.newSize(window.innerWidth + (window.innerWidth * coeff), window.innerHeight);
+        this.newSize(window.innerWidth, window.innerHeight);
     };
 
     // Initial resize

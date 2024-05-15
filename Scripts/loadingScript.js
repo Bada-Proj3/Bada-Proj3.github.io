@@ -1,4 +1,7 @@
 /* window.addEventListener("load", () => {
+    var loader = document.getElementById('loader');
+    loader.style.display = 'none';
+
     // Remove all canvas elements
     const canvases = document.querySelectorAll("canvas");
     canvases.forEach(canvas => {
