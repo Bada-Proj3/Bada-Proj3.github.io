@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar With Bootstrap</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        #cont {
+            margin: 10px auto !important;
+            display: none;
+            border: 2px solid black;
+        }
+
+        footer {
+            position: relative;
+            margin-top: 50px;
+            bottom: 20px;
+        }
+        .form-group {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn one" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="#">Coding_MB</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class='bx bx-shopping-bag'></i>
+                        <span>Produit</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer" onclick="logout()">
+                <a href="#" onclick="" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <div class="main">
+            <nav class="navbar">
+                <ul class="navbar-nav navbar-expand py-3">
+                    <li>
+                        <button class="toggle-btn" type="button">
+                            <i class="lni lni-grid-alt" id="kk" style="color: black;"></i>
+                        </button>
+                    </li>
+                    <li id="recherche">
+                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                        <datalist id="datalistOptions">
+                            <option value="San Francisco">
+                            <option value="New York">
+                            <option value="Seattle">
+                            <option value="Los Angeles">
+                            <option value="Chicago">
+                        </datalist>
+                    </li>
+                    <li class="nav-item">
+                        <img src="lll.png" class="avatar img-fluid" alt="">
+                    </li>
+                </ul>
+            </nav>
+            <main class="content px-3 py-4">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h3 class="fw-bold ff mb-3">Admin Dashboard</h3>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <h5 class="mb-2 fw-bold">
+                                    Members: <span id="nbmember"></span>
+                                </h5>
+                            </div>
+                        </div>
+                        <h3 class="fw-bold ff my-3">Members use platform:</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="highlight">
+                                            <th scope="col">#</th>
+                                            <th scope="col">Prenom</th>
+                                            <th scope="col">Nom</th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Modpasse</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="userTableBody">
+                                        <tr data-static="true">
+                                            <th scope="row">1</th>
+                                            <td>Admin</td>
+                                            <td>Admin</td>
+                                            <td>Male</td>
+                                            <td>Admin</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ajouter">
+                    <button type="button" class="btn btn-success" id="ajouter" onclick="toggleDisplay()">Ajouter</button>
+                </div>
+
+                <div id="cont" class="container">
+                    <h2 style="text-align: center;">Add User</h2>
+                    <form id="userForm">
+                        <div class="form-group">
+                            <label for="prenom">Prenom:</label>
+                            <input type="text" class="form-control" id="prenom" required>
+                            <div class="feedback">
+                                <p id="fr"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom:</label>
+                            <input type="text" class="form-control" id="nom" required>
+                            <div class="feedback">
+                                <p id="lr"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender:</label>
+                            <select class="form-control" id="gender" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <div class="feedback">
+                                <p id="fd"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="modpasse">Modpasse:</label>
+                            <input type="password" class="form-control" id="modpasse" required>
+                            <div class="feedback">
+                                <p id="ps"></p>
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn btn-primary button" on>Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-body-secondary">
+                        <div class="col-6 text-start">
+                            <a class="text-body-secondary" href="#">
+                                <strong>Coding_MB</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+    
+
+    </script>
+</body>
+</html>
