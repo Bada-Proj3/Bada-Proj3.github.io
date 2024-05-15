@@ -1,0 +1,307 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CodePen - infinity loader</title>
+        <link rel="stylesheet" href="Styles/styles.css" id="y">
+        <script src="Scripts/infinityLoadAnim.js" class="x"></script>
+        <script src="Scripts/loadingScript.js"></script>
+
+    </head>
+  
+<body>
+    <script id="rendered-js" class="x">
+    RGBA(
+    `
+        vec2 uv = gl_FragCoord.xy/resolution - 0.5;
+        uv.x *= resolution.x/resolution.y;
+        if (uv.x > 0.0) uv.y = -uv.y;
+    
+        float r = 0.2*cos(2.0*atan(uv.y, uv.x));
+        float d = dot(uv, uv);
+        float s = 0.0015/sqrt(d);
+        float c = 1.0 - smoothstep(r, r+s, d)
+                        - smoothstep(r, r-s, d);
+        
+        gl_FragColor = vec4(c, c, c, 1.0);
+    
+        vec3 p = vec3(0.5, 0.2, 0.33);
+        r = sqrt(r);
+        d = pow(d, 0.2) * 25.0;
+    
+        for (float i = 1e-6; i < 1.0; i += 0.05) {
+            float t = 1.0 + time*1.5 + i;
+            vec2 uv2 = uv + vec2(cos(t), sin(t)) * r;
+            vec3 color = vec3(sin(t*4.0), cos(t*3.0), sin(t*7.0));
+            c = smoothstep(i/d, 0.0, length(uv2));
+            gl_FragColor += vec4(p * (1.0 + color) * c, 1.);   
+        }
+    `,
+    {
+        record: false });
+    </script>
+    <div id="y">
+
+    </div>
+<div class="return">
+
+    <a href="#top">&#9650</a>
+    <p>go up</p>
+
+</div>
+<div class="slider">
+    <div class="slides">
+        <input type="radio" name="slide-radio-btn" id="slideRadio1" onclick="counter = 1">
+        <input type="radio" name="slide-radio-btn" id="slideRadio2" onclick="counter = 2">
+        <input type="radio" name="slide-radio-btn" id="slideRadio3" onclick="counter = 3">
+        <input type="radio" name="slide-radio-btn" id="slideRadio4" onclick="counter = 4">
+
+        <div class="slide first">
+            <img src="Images/Slider/pump.jpg">
+            <div class="textContainer">
+                <h1 class="slideText slideText1">WELCOME TO ITALFLUID</h1>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="Images/Slider/plant.png">
+            <div class="textContainer">
+                <h1 class="slideText slideText2">PLANT CONSTRUCTION,<br>COMMISSIONING & MANAGEMENT</h1>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="Images/Slider/machinery2.png">
+            <div class="textContainer">
+                <h1 class="slideText slideText3">WIDE RANGE OF OIL TREATEMENT EQUIPMENT,<br>DESIGNED AND CONSTRUCTED INHOUSE</h1>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="Images/Slider/machinery.jpg">
+            <div class="textContainer">
+                <h1 class="slideText slideText4">WE PROVIDE HIGH QUALITY SERVICES<br>TO OIL COMPANIES AND CONSTANTLY FULFILL CUSTOMER SATISFACTION</h1>
+            </div>
+        </div>
+
+        <div class="slideAutoNav">
+            <div class="autoBtn1"></div>
+            <div class="autoBtn2"></div>
+            <div class="autoBtn3"></div>
+            <div class="autoBtn4"></div>
+        </div>
+        <div class="slideManualNav">
+            <label for="slideRadio1" class="manualBtn"></label>
+            <label for="slideRadio2" class="manualBtn"></label>
+            <label for="slideRadio3" class="manualBtn"></label>
+            <label for="slideRadio4" class="manualBtn"></label>
+        </div>
+    </div>
+</div>
+<header id="top">
+    <div class="headerDiv1">
+        <div class="headerLogo">
+            <img src="Images/logo_imsp.png" alt="Logo Italfluid IMSP">
+        </div>
+        <div class="headerTitle">
+            <h1><span>I</span>talfluid <span>M</span>aghreb <span>S</span>ervices <span>P</span>etroliers</h1>
+        </div>
+    </div>
+    <div class="headerDiv2">
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: white;">Home</a></li>
+                <li class="middle"><a href="Overview.html">Company Overview</a></li>
+                <li class="middle"><a href="Services-Equipment.html">Services & Equipment</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="catGrid">
+    <div class="catCard">
+        <div class="catImage">
+            <img src="Images/Categories/Screenshot_1.png" alt="">
+            <div class="text">
+                <h1>About us</h1>
+            </div>
+        </div>
+        <div class="catText">
+            <p>The Oil Treatment System is based on modular skid units, fast to set up and easily expandable. The system is flexible and sized to grant production 24 h a day, all year long.</p>
+        </div>
+        <div class="go">
+            <a href="Overview.html">Explore&nbsp;&#9654;</span></a>
+        </div>
+    </div>
+    <div class="catCard">
+        <div class="catImage">
+            <img src="Images/Categories/Screenshot_2.png" alt="">
+            <div class="text">
+                <h1>Services</h1>
+            </div>
+        </div>
+        <div class="catText">
+            <p>Italfluid is a global service contractor leader in providing upstream petroleum with specialized services for production and well operations activities.</p>
+        </div>
+        <div class="go">
+            <a href="Services-Equipment.html#Services">Explore&nbsp;&#9654;</a>
+        </div>
+    </div>
+    <div class="catCard">
+        <div class="catImage">
+            <img src="Images/Categories/Screenshot_3.png" alt="">
+            <div class="text">
+                <h1>Equipment</h1>
+            </div>
+        </div>
+        <div class="catText">
+            <p>Equipment like: separators, heaters, choke valves, SDV valves, sand filters, injection units, flowlines, etc., including PLC control systems are designed and constructed inhouse.</p>
+        </div>
+        <div class="go">
+            <a href="Services-Equipment.html#Equipment">Explore&nbsp;&#9654;</span></a>
+        </div>
+    </div>
+</div>
+<div class="workingMap">
+    <div class="text">
+        <h1>ITF Group Working Map</h1>
+        <p>
+        Italfluid Geoenergy S.r.l. is an Italian services company that has been operating in the oil industry for over 30 years.
+        <br><br>
+        It mainly specializes in the following fields of activity:
+        <br><br>
+        -Production testing of oil wells.<br>
+        -Early production and long production test.<br>
+        -Measures and checks in wells (read out, the memory gauge).<br>
+        -Gas Desulfurization<br>
+        -Design and mechanical engineering.<br>
+        -Design, construction and maintenance of process plants and hydrocarbon processing.<br>
+        -In recent years it has expanded its activities abroad in collaboration with the other companies of the group.<br>
+        </p>
+    </div>
+    <div class="chart">
+        <img src="Images/Chart/chart.jpg">
+    </div>
+</div>
+<div class="intro">
+    <div class="text">
+        <h1>Italfluid Group Origins</h1>
+        <p>
+            Italfluid was founded in 1975 by Prof. Guido Soavi, former Montecatini manager and Professor of Petroleum Chemistry at Genoa University. Since then Italfluid has continuously evolved and grown, and today is the most important Italian service company for the Upstream Oil Industry. Such result is due to Italfluid ability to provide high quality services to Oil Company and constantly fulfilling customers satisfaction.
+        </p>
+    </div>
+    <div class="image">
+        <img src="Images/Intro/Professor_soardi.png" alt="">
+    </div>
+</div>
+<div class="locations">
+    <h1>Our locations</h1>
+    <div class="locGrid">
+        <div class="loc">
+            <img src="Images/Locations/italy.png" alt="">
+            <h2>Italy</h2>
+        </div>
+        <div class="loc">
+            <img src="Images/Locations/tunisia.png" alt="">
+            <h2>Tunisia</h2>
+        </div>
+        <div class="loc">
+            <img src="Images/Locations/algeria.png" alt="">
+            <h2>Algeria</h2>
+        </div>
+        <div class="loc">
+            <img src="Images/Locations/morocco.png" alt="">
+            <h2>Morocco</h2>
+        </div>
+        <div class="loc">
+            <img src="Images/Locations/libya.png" alt="">
+            <h2>Libya</h2>
+        </div>
+        <div class="loc">
+            <img src="Images/Locations/saudi.png" alt="">
+            <h2>Saudi Arabia</h2>
+        </div>
+        <div class="loc">
+            <img src="Images/Locations/middleeast.png" alt="">
+            <h2>Middle East</h2>
+        </div>
+    </div>
+</div>
+<div class="branches">
+    <h1>Our branches</h1>
+    <div class="qode_video_box">
+        <a itemprop="image" class="qode_video_image" data-rel="prettyPhoto" rel="prettyPhoto" href="https://youtu.be/SKxvUveSVj8Z" target="_blank">
+            <img src="https://www.italfluid.com/wp-content/uploads/2023/01/italfluid_mappa_new.jpg">
+            <span class="qode_video_box_button_holder">
+                <span class="qode_video_box_button">
+                    <span class="qode_video_box_button_arrow">
+                    </span>
+                </span>
+            </span>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer1">
+        <div class="top">
+            <div class="hq cards">
+                <div>
+                    <div>
+                        <h1>Main HQ (Italy)</h1>
+                    </div>
+                    <div class="line">
+                        <img src="Images/Icon/icon_phone.png" alt="">
+                        <p style="margin-left: 0.3rem;">+39 085 89xxxx</p>
+                    </div>
+                    <div class="line">
+                        <img src="Images/Icon/icon_location.png" alt="">
+                        <p>Via Vivaldi n. 4, 65015 Montesilvano (PE)</p>
+                    </div>
+                    <div class="line">
+                        <img src="Images/Icon/icon_mail.png" alt="">
+                        <p>Info@italfluid.com</p>
+                    </div>
+                    <div class="line">
+                        <img src="Images/Icon/icon_website.png" alt="">
+                        <p><a href="https://www.italfluid.com/" target="_blank" style="color: #eb9834;">www.italfluid.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mid cards">
+                <div>
+                    <div class="img">
+                        <img src="Images/logo_imsp.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h1>Where people come first</h1>
+                        <p>
+                            Italfluid Geoenergy S.r.l. is an Italian services company that has been operating in the oil industry for over 30 years. Italfluid is an integrated Service Company which integrates Fields Operating Teams with Engineering and Manufacturing divisions. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="tn cards">
+                <div>
+                    <div>
+                        <h1>Tunisia HQ</h1>
+                    </div>
+                    <div class="line">
+                        <img src="Images/Icon/icon_phone.png" alt="">
+                        <p style="margin-left: 0.3rem;">+216 71 86xxxx</p>
+                    </div>
+                    <div class="line">
+                        <img src="Images/Icon/icon_location.png" alt="">
+                        <p>Rés. du Lac zone B, Bloc D App. 24 Les berges du Lac – Tunis</p>
+                    </div>
+                    <div class="line">
+                        <img src="Images/Icon/icon_mail.png" alt="">
+                        <p>Italfluid.maghreb@planet.tn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer2">
+        <p>Copyright © 2023 <b>Italfluid</b> | P.IVA: 01218240685 | All Rights Reserved</p>
+    </div>
+</footer>
+</body>
+</html>
+</html>

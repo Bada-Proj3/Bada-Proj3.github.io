@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    display: grid;    
+    justify-items: center;
+}
+
+canvas {
+    width: 50%;
+    margin-top: 10%;
+    align-self: center;
+    z-index: 1000;
+}
+
+#y
+{
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 1s ease, height 1s ease;
+}
