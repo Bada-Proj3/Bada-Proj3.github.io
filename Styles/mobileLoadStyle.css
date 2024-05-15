@@ -9,6 +9,7 @@
   }
   
   .infinity {
+    margin-top: -8%;
     position: relative;
     width: 26vw; /* Double the original width */
     height: 11.6vw; /* Double the original height */
