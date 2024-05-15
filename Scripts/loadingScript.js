@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     });
 
     // Remove all div elements with id "y"
-    const divY = document.querySelectorAll("div#y");
+    const divY = document.querySelectorAll("div#cavcon");
     divY.forEach(div => {
         div.classList.add("hidden");
         setTimeout(() => {

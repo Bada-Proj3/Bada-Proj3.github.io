@@ -1,7 +1,15 @@
 function RGBA(mainCode, props) {
     // shaders
     let config = prepareConfig(props);
+    let cavCon = document.getElementById('cavCon');
+    if (!cavCon) {
+        cavCon = document.createElement('div');
+        cavCon.id = 'cavCon';
+        document.body.appendChild(cavCon);
+    }
     let canvas = config.target || document.createElement('canvas');
+    canvas.classList.add("can");
+    cavCon.appendChild(canvas);
     let gl = this.gl = canvas.getContext("webgl");
     let program = gl.createProgram();
     [config.vertexShader, config.fragmentShader].forEach(createShader);
@@ -34,11 +42,10 @@ function RGBA(mainCode, props) {
     };
 
     if (!config.target) {
-        document.body.append(canvas);
         if (false === config.fullscreen)
             return
-        document.body.style.margin = 0;
-        document.body.style.overflow = 'hidden';
+        cavCon.style.margin = 0;
+        cavCon.style.overflow = 'hidden';
         addEventListener("resize", () => this.resize(innerWidth, innerHeight));
         this.newSize(innerWidth, innerHeight);
     } else {
