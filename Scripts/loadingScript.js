@@ -1,4 +1,4 @@
-window.addEventListener("load", () => {
+/* window.addEventListener("load", () => {
     // Remove all canvas elements
     const canvases = document.querySelectorAll("canvas");
     canvases.forEach(canvas => {
@@ -26,3 +26,4 @@ window.addEventListener("load", () => {
         }, 1000); // wait for the transition duration
     });
 });
+ */
