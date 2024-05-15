@@ -38,7 +38,6 @@ window.addEventListener("load", () => {
     });
 });
 
-
 function load()
 {
     var screenWidth = screen.width;

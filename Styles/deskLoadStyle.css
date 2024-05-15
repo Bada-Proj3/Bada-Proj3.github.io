@@ -20,7 +20,6 @@ body {
     justify-items: center;
     overflow: hidden;
 }
-
 .hidden {
     opacity: 0;
     height: 0;

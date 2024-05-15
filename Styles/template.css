@@ -1,0 +1,48 @@
+@font-face {
+    font-family: LogoText;
+    src: url(../Fonts/GreatVibes/GreatVibes-Regular.ttf);
+}
+@font-face {
+    font-family: Title;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+    font-family: TitleItalic;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Italic.ttf);
+}
+@font-face {
+    font-family: TitleBold;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Bold.ttf);
+}
+@font-face {
+    font-family: TitleBoldItalic;
+    src: url(../Fonts/Playfair/PlayfairDisplay-BoldItalic.ttf);
+}
+@font-face {
+    font-family: textf;
+    src: url(../Fonts/OpenSans/OpenSans.ttf);
+}
+@font-face {
+    font-family: textf-light;
+    src: url(../Fonts/OpenSans/OpenSans-Light.ttf);
+}
+:root{
+    font-size: 62.5%;
+}
+
+html
+{
+    scroll-behavior: smooth;
+    
+}
+body
+{
+    font-size: 1.6rem;
+
+    color: white;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #1A1A1C;
+}

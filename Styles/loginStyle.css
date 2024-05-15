@@ -1,0 +1,163 @@
+/* FONTS */
+@font-face {
+    font-family: LogoText;
+    src: url(../Fonts/GreatVibes/GreatVibes-Regular.ttf);
+}
+@font-face {
+    font-family: textf;
+    src: url(../Fonts/OpenSans/OpenSans.ttf);
+}
+@font-face {
+    font-family: textf-light;
+    src: url(../Fonts/OpenSans/OpenSans-Light.ttf);
+}
+@font-face {
+    font-family: Title;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+    font-family: TitleItalic;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Italic.ttf);
+}
+@font-face {
+    font-family: TitleBoldItalic;
+    src: url(../Fonts/Playfair/PlayfairDisplay-BoldItalic.ttf);
+}
+
+:root{
+    font-size: 62.5%;
+}
+html
+{
+    scroll-behavior: smooth;
+    
+}
+body
+{
+    font-size: 1.6rem;
+
+    color: white;
+
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #1A1A1C;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.wrap
+{
+    margin-top: -30%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.logImg
+{
+    width: 40%;
+}
+
+.logImg img
+{
+    width: 100%;
+}
+
+.logTitle h1
+{
+    text-align: center;
+    margin-top: -4.5rem;
+    margin-left: -1.4rem;
+    user-select: none;
+    font-family: LogoText;
+    color: white;
+    text-transform: capitalize;
+    font-size: 5rem;
+}
+
+.logWrap
+{
+    border-radius: 2rem;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    background-color: #262629;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+form 
+{
+    width: 80%;
+}
+.logWrap div
+{
+    margin: 2rem 0;
+}
+
+.logWrap p
+{
+    color: white;
+    font-family: titleitalic;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: .08rem;
+    user-select: none;
+}
+
+.logWrap input
+{
+    color: white;
+    font-size: 2rem;
+    font-family: title;
+    text-align: center;
+    width: 100%;
+    padding: 1.4rem;
+    border-radius: 2rem;
+    background-color: #313135;
+    border: none;
+    letter-spacing: .25rem;
+    font-style: italic;
+}
+
+.logWrap input:focus
+{
+    outline: none;
+}
+
+.btns
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btns button
+{
+    background-color: #1A1A1C;
+    color: white;
+    border: none;
+    padding: 1.4rem 5rem;
+    width: fit-content;
+    font-family: title;
+    font-size: 2rem;
+    border-radius: 2rem;
+    transition: background-color 600ms, color 300ms;
+}
+.sub:hover
+{
+    background-color: white;
+    color:#1A1A1C;
+    transition: background-color 600ms, color 300ms;
+}
+.res:hover
+{
+    background-color: red;
+    transition: background-color 600ms;
+
+}
