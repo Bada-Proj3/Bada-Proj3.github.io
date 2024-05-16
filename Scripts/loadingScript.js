@@ -8,7 +8,6 @@ function hideLoader()
     loader.style.display = 'none';
 
     const mobLDiv = document.querySelectorAll("div.loadMobile");
-    console.log(mobLDiv);
     mobLDiv.forEach(mob => {
         mob.classList.add("hidden");
         setTimeout(() => {
