@@ -9,11 +9,12 @@ body {
 }
 #cavCon
 {
-    
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     position: absolute;
     z-index: 999;
-    width: 100vw;
-    height: 100vh;
     background-color: black;
     display: grid;
     align-items: center;
@@ -22,7 +23,6 @@ body {
 }
 .hidden {
     opacity: 0;
-    height: 0;
     overflow: hidden;
-    transition: opacity 1s ease, height 1s ease;
+    transition: opacity 1.5s ease;
 }

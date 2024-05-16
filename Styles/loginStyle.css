@@ -37,6 +37,7 @@ html
 }
 body
 {
+    overflow: hidden;
     font-size: 1.6rem;
 
     color: white;
@@ -54,8 +55,10 @@ body
     align-content: center;
 }
 img
-{user-select: none;}
- .wrap
+{
+    user-select: none;
+}
+.wrap
 {
     margin-top: -5%;
     display: grid;
@@ -177,9 +180,6 @@ form
 
     transition: background-color 600ms, color 300ms, box-shadow 600ms;
 
-
-
-
 } 
 .pass
 {
@@ -199,6 +199,7 @@ form
     width: 100%;
     filter: brightness(50%);
     transition: filter 300ms;
+    z-index: 1;
 }
 
 .pshow img:hover
