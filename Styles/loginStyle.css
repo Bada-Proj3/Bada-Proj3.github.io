@@ -57,6 +57,7 @@ img
 {user-select: none;}
  .wrap
 {
+    margin-top: -5%;
     display: grid;
     justify-items: center;
     align-content: center;
@@ -81,7 +82,7 @@ img
     font-family: LogoText;
     color: white;
     text-transform: capitalize;
-    font-size: 6    rem;
+    font-size: 6rem;
 }
 .logWrap
 {
