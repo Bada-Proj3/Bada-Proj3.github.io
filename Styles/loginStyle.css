@@ -360,9 +360,22 @@ form
     {
         background-position-x: 70%;
     }
+    form
+    {
+        margin-left: 0rem;
+    }
     .wrap
     {
         margin-left: 0rem;
+    }
+    .welc p
+    {
+        margin-left: 1.5rem;
+    }
+    .logWrap
+    {
+        margin-left: -1.5rem;
+
     }
     .logImg
     {
