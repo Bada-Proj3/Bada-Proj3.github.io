@@ -1,10 +1,11 @@
 window.addEventListener("load", () => {
-        setTimeout(hideLoader, 4000);
-        setTimeout(loadBs, 4000);
-    });
+    setTimeout(hideLoader, 4000);
+    setTimeout(loadBs, 4000);
+});
 
-function hideLoader()
-{
+let webglContexts = []; // Array to store WebGL contexts
+
+function hideLoader() {
     var loader = document.getElementById('loader');
     loader.style.display = 'none';
 
@@ -15,54 +16,68 @@ function hideLoader()
             mob.parentNode.removeChild(mob);
         }, 3000);
     });
-    
+
     const canvases = document.querySelectorAll("canvas");
     canvases.forEach(canvas => {
         canvas.classList.add("hidden");
         setTimeout(() => {
             canvas.parentNode.removeChild(canvas);
-        }, 3000); 
+        }, 3000);
+        // Check if the canvas has a WebGL context
+        const context = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        if (context) {
+            webglContexts.push(context); // Store WebGL context for later use
+        }
     });
 
-    
     const scripts = document.querySelectorAll("script.loadAnimScripts");
     scripts.forEach(script => {
         script.classList.add("hidden");
         setTimeout(() => {
             script.parentNode.removeChild(script);
-        }, 3000); 
+        }, 3000);
     });
 
-    
     const divY = document.querySelectorAll("div#cavCon");
     divY.forEach(div => {
         div.classList.add("hidden");
         setTimeout(() => {
             div.parentNode.removeChild(div);
-        }, 3000); 
+        }, 3000);
     });
 
     var sound = new Audio("../Sounds/Login.mp3");
     sound.play();
 
+    stopWebGLRendering(); // Stop WebGL rendering after hiding elements
 }
-function loadBs()
-{
+
+function stopWebGLRendering() {
+    // Iterate over stored WebGL contexts and disable rendering
+    webglContexts.forEach(context => {
+        const ext = context.getExtension('WEBGL_lose_context');
+        if (ext) {
+            ext.loseContext(); // Lose WebGL context to stop rendering
+        }
+    });
+}
+
+function loadBs() {
     const bsFiles = document.querySelectorAll(".bsFiles");
     console.log(bsFiles);
     bsFiles.forEach(element => {
         element.removeAttribute("disabled");
     });
 }
-function load()
-{
+
+function load() {
     var screenWidth = screen.width;
     var loader = document.getElementById('loader');
 
     if (screenWidth >= 721) {
-    loader.style.display = 'none';
+        loader.style.display = 'none';
 
-    RGBA(`
+        RGBA(`
         vec2 uv = gl_FragCoord.xy/resolution - 0.5;
         uv.x *= resolution.x/resolution.y;
         if (uv.x > 0.0) uv.y = -uv.y;
@@ -90,7 +105,7 @@ function load()
         record: false
     });
     } else {
-    // Show the loader
-    loader.style.display = 'block';
+        // Show the loader
+        loader.style.display = 'block';
     }
 }
