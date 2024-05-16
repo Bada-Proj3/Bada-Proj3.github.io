@@ -30,6 +30,7 @@
     font-size: 62.5%;
 }
 
+
 html
 {
     scroll-behavior: smooth;
@@ -46,3 +47,5 @@ body
 
     background-color: #1A1A1C;
 }
+img
+{user-select: none;}

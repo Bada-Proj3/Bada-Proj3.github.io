@@ -23,7 +23,10 @@
     font-family: TitleBoldItalic;
     src: url(../Fonts/Playfair/PlayfairDisplay-BoldItalic.ttf);
 }
-
+@font-face {
+    font-family: TitleBold;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Bold.ttf);
+}   
 :root{
     font-size: 62.5%;
 }
@@ -50,7 +53,9 @@ body
     justify-content: center;
     align-content: center;
 }
-.wrap
+img
+{user-select: none;}
+ .wrap
 {
     display: grid;
     justify-items: center;
@@ -70,15 +75,14 @@ body
 .logTitle h1
 {
     text-align: center;
-    margin-top: -4.5rem;
-    margin-left: -1.4rem;
+    margin-top: -7rem;
+    margin-left: -1.6rem;
     user-select: none;
     font-family: LogoText;
     color: white;
     text-transform: capitalize;
-    font-size: 5rem;
+    font-size: 6    rem;
 }
-
 .logWrap
 {
     border-radius: 2rem;
@@ -96,6 +100,7 @@ form
 .logWrap div
 {
     margin: 2rem 0;
+    
 }
 
 .logWrap p
@@ -103,13 +108,14 @@ form
     color: white;
     font-family: titleitalic;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     letter-spacing: .08rem;
     user-select: none;
 }
 
 .logWrap input
 {
+    
     color: white;
     font-size: 2rem;
     font-family: title;
@@ -121,11 +127,17 @@ form
     border: none;
     letter-spacing: .25rem;
     font-style: italic;
+
+    transition: border 100ms, box-shadow 400ms;
 }
 
 .logWrap input:focus
 {
     outline: none;
+    border: #fff .3rem solid;
+    box-shadow: 0rem 0rem 1rem #fff;
+
+    transition: border 100ms, box-shadow 400ms;
 }
 
 .btns
@@ -143,20 +155,55 @@ form
     border: none;
     padding: 1.4rem 5rem;
     width: fit-content;
-    font-family: title;
     font-size: 2rem;
     border-radius: 2rem;
-    transition: background-color 600ms, color 300ms;
+    transition: background-color 600ms, color 300ms, box-shadow 600ms;
+    font-family: title;
+
 }
 .sub:hover
 {
     background-color: white;
     color:#1A1A1C;
-    transition: background-color 600ms, color 300ms;
+    box-shadow: 0 0 1rem #fff;
+    transition: background-color 600ms, color 300ms, box-shadow 600ms;
 }
 .res:hover
 {
-    background-color: red;
+    background-color: rgb(198, 0, 0);
     transition: background-color 600ms;
+    box-shadow: 0 0 1.5rem red;
+
+    transition: background-color 600ms, color 300ms, box-shadow 600ms;
+
+
+
+
+} 
+.pass
+{
+    display: grid;
+    grid-template-columns: 92.35% 6%;
+    justify-content: space-evenly;
+    gap: 2%;
+    align-items: center;
+}
+
+.pshow
+{
+    width: 100%;
+}
+.pshow img
+{
+    width: 100%;
+    filter: brightness(50%);
+    transition: filter 300ms;
+}
+
+.pshow img:hover
+{
+    filter: brightness(100%);
+    transition: filter 300ms;
+    cursor: pointer;
 
 }

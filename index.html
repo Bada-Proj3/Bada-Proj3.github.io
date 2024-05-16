@@ -13,10 +13,11 @@
 
         <link rel="stylesheet" href="Styles/deskLoadStyle.css">
         <link rel="stylesheet" href="Styles/mobileLoadStyle.css">
-        <link rel="icon" type="image/png" href="Images/logo_white.png">
+        <link rel="icon" type="image/png" href="Images/Logos/logo_white.png">
 
         <script src="Scripts/infinityLoadAnim.js" class="loadAnimScripts"></script>
         <script src="Scripts/loadingScript.js"></script>
+        <script src="Scripts/loginScript.js"></script>
         <link rel="stylesheet" href="Styles/loginStyle.css">
 
     </head>
@@ -28,13 +29,12 @@
     
     <div class="wrap">
         <div class="logImg">
-            <img src="Images/logo_white.png" alt="infinity watches' logo">
+            <img src="Images/Logos/logo_white.png" alt="infinity watches' logo">
         </div>
         <div class="logTitle">
             <h1>Infinity Watches</h1>
         </div>
         <div class="logWrap">
-
             <form action="">
                 <div>
                     <p>Welcome to <span>Infinity Watches'</span> official website, please log in to continue.</p>
@@ -42,12 +42,18 @@
                 <div>
                     <input type="text" placeholder="Username" required>
                 </div>
-                <div>
-                    <input type="password" placeholder="Password" required>
+                <div class="pass">
+                    <input type="password" id="passin" placeholder="Password" required>
+                    <div class="pshow" style="margin: 0;" onclick="togglePasswordVisibility()">
+                        <img src="Images/Misc/eye.png" id="eyeimg">
+                    </div>
                 </div>
                 <div class="btns">
                     <button type="submit" class="sub">Log in</button>
                     <button type="reset" class="res">Reset</button>
+                </div>
+                <div>
+                    <p>Don't have an account? <a href="">Sign up</a> now!</p>
                 </div>
             </form>
         </div>

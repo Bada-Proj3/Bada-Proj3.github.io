@@ -1,4 +1,9 @@
 window.addEventListener("load", () => {
+        setTimeout(hideLoader, 0);
+    });
+
+function hideLoader()
+{
     var loader = document.getElementById('loader');
     loader.style.display = 'none';
 
@@ -8,46 +13,43 @@ window.addEventListener("load", () => {
         mob.classList.add("hidden");
         setTimeout(() => {
             mob.parentNode.removeChild(mob);
-        }, 1000); // wait for the transition duration
+        }, 1000);
     });
-    // Remove all canvas elements
+    
     const canvases = document.querySelectorAll("canvas");
     canvases.forEach(canvas => {
         canvas.classList.add("hidden");
         setTimeout(() => {
             canvas.parentNode.removeChild(canvas);
-        }, 1000); // wait for the transition duration
+        }, 1000); 
     });
 
-    // Remove all script elements with class "x"
+    
     const scripts = document.querySelectorAll("script.loadAnimScripts");
     scripts.forEach(script => {
         script.classList.add("hidden");
         setTimeout(() => {
             script.parentNode.removeChild(script);
-        }, 1000); // wait for the transition duration
+        }, 1000); 
     });
 
-    // Remove all div elements with id "y"
+    
     const divY = document.querySelectorAll("div#cavCon");
     divY.forEach(div => {
         div.classList.add("hidden");
         setTimeout(() => {
             div.parentNode.removeChild(div);
-        }, 1000); // wait for the transition duration
+        }, 1000); 
     });
-});
-
+}
 function load()
 {
     var screenWidth = screen.width;
     var loader = document.getElementById('loader');
 
     if (screenWidth >= 721) {
-    // Hide the loader
     loader.style.display = 'none';
 
-    // Run the RGBA script
     RGBA(`
         vec2 uv = gl_FragCoord.xy/resolution - 0.5;
         uv.x *= resolution.x/resolution.y;
