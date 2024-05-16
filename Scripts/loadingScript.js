@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
-    setTimeout(hideLoader, 3000);
-    setTimeout(loadBs, 3000);
+    setTimeout(hideLoader, 0);
+    setTimeout(loadBs, 0);
 });
 
 let webglContexts = []; // Array to store WebGL contexts
