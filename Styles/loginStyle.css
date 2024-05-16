@@ -48,11 +48,22 @@ body
     height: 100vh;
     width: 100vw;
 
-    background-color: #1A1A1C;
+    /* background-color: #1A1A1C; */
+    background-image: url(../Images/Backgrounds/loginWall.jpg);
+    background-size: cover;
+    background-position-y: top;
+    background-position-x: center;
+    display: grid;    
 
-    display: grid;
     justify-content: center;
     align-content: center;
+    transition: backdrop-filter 600ms;
+
+}
+.bodyTint
+{
+    backdrop-filter: brightness(130%);
+    transition: backdrop-filter 600ms;
 }
 img
 {
@@ -60,12 +71,23 @@ img
 }
 .wrap
 {
-    margin-top: -5%;
+    margin-top: -10vh;
     display: grid;
     justify-items: center;
-    align-content: center;
-}
+    backdrop-filter: blur(5px) brightness(40%);
 
+    align-content: center;
+    height: 110vh;
+    bottom: 0;
+    border-right: solid white .5rem;
+    border-left: solid white .5rem;
+    transition: backdrop-filter 600ms;
+}
+.wrap:hover
+{
+    backdrop-filter: blur(5px) brightness(15%);
+    transition: backdrop-filter 600ms;
+}
 .logImg
 {
     width: 40%;
@@ -83,26 +105,38 @@ img
     margin-left: -1.6rem;
     user-select: none;
     font-family: LogoText;
+    font-weight: bold;
     color: white;
     text-transform: capitalize;
     font-size: 6rem;
+    /* text-shadow:
+    3px 3px 10px #000,
+    -3px 3px 10px #000,
+    -3px -3px 10px #000,
+    3px -3px 10px #000; */
+    text-shadow: #262629 .3rem .3rem;
+
 }
 .logWrap
 {
     border-radius: 2rem;
-    margin-top: 2rem;
+    margin-top: -2%;
     padding: 2rem 0;
-    background-color: #262629;
-    width: 100%;
+    /* background-color: #1A1A1C; */
+    width: 80%;
     display: flex;
     justify-content: center;
 }
+
 form 
 {
+    margin-top: -8%;
     width: 80%;
 }
+
 .logWrap div
 {
+
     margin: 2rem 0;
     
 }
@@ -116,32 +150,33 @@ form
     letter-spacing: .08rem;
     user-select: none;
 }
-
+.inUname
+{
+    width: 95%;
+}
 .logWrap input
 {
+    border: rgba(255, 255, 255, .2) .2rem solid;
     
     color: white;
     font-size: 2rem;
     font-family: title;
     text-align: center;
-    width: 100%;
     padding: 1.4rem;
-    border-radius: 2rem;
-    background-color: #313135;
-    border: none;
+    border-radius: 4rem;
+    background-color: transparent;
     letter-spacing: .25rem;
     font-style: italic;
-
-    transition: border 100ms, box-shadow 400ms;
+    transition: background-color 400ms;
+    backdrop-filter: blur(20px);
 }
 
 .logWrap input:focus
 {
+    border: rgba(255, 255, 255, .2) .2rem solid;
+     
+    background-color: rgba(255, 255, 255, .2);
     outline: none;
-    border: #fff .3rem solid;
-    box-shadow: 0rem 0rem 1rem #fff;
-
-    transition: border 100ms, box-shadow 400ms;
 }
 
 .btns
@@ -149,40 +184,58 @@ form
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0rem;
 }
 
 .btns button
 {
-    background-color: #1A1A1C;
-    color: white;
-    border: none;
-    padding: 1.4rem 5rem;
+    background: transparent;
+    color: rgba(255, 255, 255, .8);
     width: fit-content;
     font-size: 2rem;
-    border-radius: 2rem;
     transition: background-color 600ms, color 300ms, box-shadow 600ms;
+    cursor: pointer;
+    backdrop-filter: blur(4rem);
     font-family: title;
+
+}
+.res
+{
+    border-radius: 0rem 4rem 4rem 0rem;
+    padding: 1.4rem 5rem 1.4rem 4.2rem;
+    border: solid rgba(255, 255, 255, .2) .2rem;
+    border-left: none;
+
+}
+.sub 
+{
+    border-radius: 4rem 0rem 0rem 4rem;
+    padding: 1.4rem 4rem 1.4rem 5rem;
+    border: solid rgba(255, 255, 255, .2) .2rem;
+    border-right: solid rgba(255, 255, 255, .2) .2rem;
+
 
 }
 .sub:hover
 {
     background-color: white;
     color:#1A1A1C;
-    box-shadow: 0 0 1rem #fff;
+    box-shadow: 0 0 2rem #fff;
     transition: background-color 600ms, color 300ms, box-shadow 600ms;
 }
 .res:hover
 {
+    color: white;
     background-color: rgb(198, 0, 0);
     transition: background-color 600ms;
-    box-shadow: 0 0 1.5rem red;
+    box-shadow:0 0 2rem red;
 
     transition: background-color 600ms, color 300ms, box-shadow 600ms;
 
 } 
 .pass
 {
+    width: 100%;
     display: grid;
     grid-template-columns: 92.35% 6%;
     justify-content: space-evenly;
@@ -208,4 +261,125 @@ form
     transition: filter 300ms;
     cursor: pointer;
 
+}
+#ermsg
+{
+    margin-top: -1rem;
+    display: none;
+}
+
+
+@media (max-width:1400px) {
+    body
+    {
+        background-position-x: 65%;
+    }
+}
+
+@media (max-width:1000px) {
+
+    body
+    {
+        background-position-x: 72%;
+    }
+
+    .wrap
+    {
+        margin-top: -5vh;
+        display: grid;
+        justify-items: center;
+        backdrop-filter: none;
+        width: 100vw;
+        align-content: center;
+        height: 105vh;
+        bottom: 0;
+        border-right: none;
+        border-left: none;
+        transition: backdrop-filter 600ms;
+        backdrop-filter: blur(.4rem);
+
+    }
+    .wrap:hover
+    {
+        backdrop-filter: blur(.4rem);
+
+    }
+    .logWrap
+    {
+        margin-top: -2rem;
+    }
+}
+
+@media (max-width:700px) {
+
+    body
+    {
+        backdrop-filter: brightness(50%) blur(.4rem);
+        background-position-x: 60%;
+    }
+    .wrap h1
+    {
+        font-size: 5rem;
+    }
+
+    
+}
+
+@media (max-width:600px) {
+
+    body
+    {
+        backdrop-filter: brightness(50%) blur(.4rem);
+        background-position-x: 62%;
+    }
+
+    .logTitle
+    {
+        margin-top: 2rem;
+    }
+    .wrap h1
+    {
+        font-size: 4rem;
+    }
+    
+}
+
+@media (max-width:500px) {
+
+    body
+    {
+        background-position-x: 70%;
+    }
+    .wrap
+    {
+        margin-left: 0rem;
+    }
+    .logImg
+    {
+        width: 50%;
+        margin-left: 0rem;
+    }
+    .logTitle
+    {
+        margin-top: 3rem;
+    }
+    .wrap h1
+    {
+        margin-left: 0;
+        font-size: 4rem;
+    }
+    .wrap p
+    {
+        font-size: 1.6rem;
+    }
+    .btns button
+    {
+        font-size: 1.4rem;
+    }
+
+    .wrap input
+    {
+        font-size: 1.4rem;
+    }
+    
 }

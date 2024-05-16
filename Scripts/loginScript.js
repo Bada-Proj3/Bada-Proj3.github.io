@@ -1,3 +1,14 @@
+
+function toggleTint()
+{
+    size = screen.width;
+    if (size > 1000)
+    {
+        document.body.classList.toggle('bodyTint');
+        
+    }
+}
+
 function togglePasswordVisibility() {
     var passwordField = document.getElementById("passin");
     var eye = document.getElementById("eyeimg");
@@ -9,3 +20,4 @@ function togglePasswordVisibility() {
         passwordField.type = "password";
     }
 }
+

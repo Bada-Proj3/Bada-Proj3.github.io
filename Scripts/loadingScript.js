@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
-    setTimeout(hideLoader, 4000);
-    setTimeout(loadBs, 4000);
+    setTimeout(hideLoader, 3000);
+    setTimeout(loadBs, 3000);
 });
 
 let webglContexts = []; // Array to store WebGL contexts
@@ -14,7 +14,7 @@ function hideLoader() {
         mob.classList.add("hidden");
         setTimeout(() => {
             mob.parentNode.removeChild(mob);
-        }, 3000);
+        }, 1500);
     });
 
     const canvases = document.querySelectorAll("canvas");
@@ -22,7 +22,7 @@ function hideLoader() {
         canvas.classList.add("hidden");
         setTimeout(() => {
             canvas.parentNode.removeChild(canvas);
-        }, 3000);
+        }, 1500);
         // Check if the canvas has a WebGL context
         const context = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
         if (context) {
@@ -35,7 +35,7 @@ function hideLoader() {
         script.classList.add("hidden");
         setTimeout(() => {
             script.parentNode.removeChild(script);
-        }, 3000);
+        }, 1500);
     });
 
     const divY = document.querySelectorAll("div#cavCon");
@@ -43,7 +43,7 @@ function hideLoader() {
         div.classList.add("hidden");
         setTimeout(() => {
             div.parentNode.removeChild(div);
-        }, 3000);
+        }, 1500);
     });
 
     var sound = new Audio("../Sounds/Login.mp3");
@@ -64,7 +64,6 @@ function stopWebGLRendering() {
 
 function loadBs() {
     const bsFiles = document.querySelectorAll(".bsFiles");
-    console.log(bsFiles);
     bsFiles.forEach(element => {
         element.removeAttribute("disabled");
     });
