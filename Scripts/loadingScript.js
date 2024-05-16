@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
-    setTimeout(hideLoader, 0);
-    setTimeout(loadBs, 0);
+    setTimeout(hideLoader, 2000);
+    setTimeout(loadBs, 2000);
 });
 
 let webglContexts = []; // Array to store WebGL contexts
@@ -49,7 +49,7 @@ function hideLoader() {
     var sound = new Audio("../Sounds/Login.mp3");
     sound.play();
 
-    stopWebGLRendering(); // Stop WebGL rendering after hiding elements
+    setTimeout(stopWebGLRendering,1500);
 }
 
 function stopWebGLRendering() {

@@ -62,8 +62,24 @@ body
 }
 .bodyTint
 {
+    .wrap
+    {
+        backdrop-filter: blur(5px) brightness(15%);
+        transition: backdrop-filter 600ms;
+    }
+    
+}
+.bodyTintFF
+{
     backdrop-filter: brightness(130%);
+    .wrap
+    {
+        backdrop-filter: blur(5px) brightness(15%);
+        transition: backdrop-filter 600ms;
+    }
+    
     transition: backdrop-filter 600ms;
+
 }
 img
 {
@@ -83,11 +99,7 @@ img
     border-left: solid white .5rem;
     transition: backdrop-filter 600ms;
 }
-.wrap:hover
-{
-    backdrop-filter: blur(5px) brightness(15%);
-    transition: backdrop-filter 600ms;
-}
+
 .logImg
 {
     width: 40%;
