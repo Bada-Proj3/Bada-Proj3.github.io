@@ -1,4 +1,5 @@
 let tint;
+ff = false;
 
 function toggleTint()
 {
@@ -14,6 +15,7 @@ function toggleTint()
 function browserTint() {
     if (navigator.userAgent.indexOf("Firefox") != -1) {
         tint = "bodyTintFF";
+        ff = true;
     } else {
         tint = "bodyTint";
     }
@@ -48,10 +50,14 @@ function togglePasswordVisibilitySig() {
 function showsign()
 {
     Show();
-    wr = document.getElementsByClassName("signwrap");
-    wr = wr[0];
-    wr.classList.add("signwrapshow");
-    wr.classList.remove("signwraphide");
+    if (ff)
+    {
+        wr = document.getElementsByClassName("signwrap");
+        wr = wr[0];
+        wr.classList.add("signwrapshow");
+        wr.classList.remove("signwraphide");
+    }
+
 
     f = document.getElementsByClassName("signf");
     f = f[0];
@@ -61,10 +67,13 @@ function showsign()
 }
 function cancelsup()
 {
-    wr = document.getElementsByClassName("signwrap");
-    wr = wr[0];
-    wr.classList.add("signwraphide");
-    wr.classList.remove("signwrapshow");
+    if(ff)
+    {
+        wr = document.getElementsByClassName("signwrap");
+        wr = wr[0];
+        wr.classList.add("signwraphide");
+        wr.classList.remove("signwrapshow");
+    }
 
     f = document.getElementsByClassName("signf");
     f = f[0];
