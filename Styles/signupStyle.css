@@ -1,0 +1,286 @@
+.signwrap
+{
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    justify-content: center;
+    align-items: center;
+}
+.signwraphide
+{
+    backdrop-filter: brightness(100%) blur(0px);
+
+    transition: backdrop-filter 600ms;
+}
+.signwrapshow
+{
+    backdrop-filter: brightness(80%) blur(4px);
+
+    transition: backdrop-filter 600ms;
+
+}
+.signf
+{
+    width: 100%;
+    padding: 2% 30%;
+    height: auto;
+    
+}
+.signfshow
+{
+    opacity: 100;
+    backdrop-filter: brightness(130%) blur(20px);
+
+    transition: opacity 400ms, backdrop-filter 800ms;
+    
+}
+.signfhide
+{
+    opacity: 0;
+    transition: opacity 400ms;
+}
+.signf p
+{
+    color: white;
+    font-family: titleitalic;
+    text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: .08rem;
+    user-select: none;
+}
+.errsig
+{
+    display: none;
+}
+
+.signf .inUname
+{
+    width: 95%;
+}
+.signf input
+{
+    border: rgba(255, 255, 255, .2) .2rem solid;
+    
+    color: white;
+    font-size: 2rem;
+    font-family: title;
+    text-align: center;
+    padding: 1.4rem;
+    border-radius: 4rem;
+    background-color: transparent;
+    letter-spacing: .25rem;
+    font-style: italic;
+    transition: background-color 400ms;
+    backdrop-filter: blur(20px);
+}
+
+.signf input:focus
+{
+    border: rgba(255, 255, 255, .2) .2rem solid;
+     
+    background-color: rgba(255, 255, 255, .2);
+    outline: none;
+}
+
+.signf .btns
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0rem;
+}
+
+.signf .btns button
+{
+    background: transparent;
+    color: rgba(255, 255, 255, .8);
+    width: fit-content;
+    font-size: 2rem;
+    transition: background-color 600ms, color 300ms, box-shadow 600ms;
+    cursor: pointer;
+    backdrop-filter: blur(4rem);
+    font-family: title;
+
+}
+.signf .res
+{
+    border-radius: 0rem 0rem 0rem 0rem;
+    padding: 1.4rem 4.5rem 1.4rem 4.5rem;
+    border: solid rgba(255, 255, 255, .2) .2rem;
+    border-left: none;
+
+}
+
+.signf .canc
+{
+    border-radius: 0rem 4rem 4rem 0rem;
+    padding: 1.4rem 5rem 1.4rem 4.2rem;
+    border: solid rgba(255, 255, 255, .2) .2rem;
+    border-left: none;
+
+}
+
+.signf .sub 
+{
+    border-radius: 4rem 0rem 0rem 4rem;
+    padding: 1.4rem 4rem 1.4rem 5rem;
+    border: solid rgba(255, 255, 255, .2) .2rem;
+    border-right: solid rgba(255, 255, 255, .2) .2rem;
+}
+.signf .canc:hover
+{
+    background-color: rgba(255, 255, 255, .4);
+
+    backdrop-filter: brightness(200%);
+}
+
+.signf .sub:hover
+{
+    background-color: rgba(255, 255, 255, .4);
+
+    backdrop-filter: brightness(200%);
+}
+.signf .res:hover
+{
+    background-color: rgba(255, 255, 255, .4);
+
+    backdrop-filter: brightness(200%);    
+} 
+.signf .sub:active
+{
+    box-shadow: 0 0 1rem #fff;
+    color: black;
+    background-color: #fff;
+    transition: background-color 0ms, color 0ms, box-shadow 0ms;
+
+}
+.signf .canc:active
+{
+    box-shadow: 0 0 1rem #fff;
+    color: black;
+    background-color: #fff;
+    transition: background-color 0ms, color 0ms, box-shadow 0ms;
+}
+
+.signf .res:active
+{
+    box-shadow: 0 0 1rem #fff;
+    color: black;
+    background-color: #fff;
+    transition: background-color 0ms, color 0ms, box-shadow 0ms;
+
+}
+
+.signf .pass
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 92.35% 6%;
+    justify-content: space-evenly;
+    gap: 2%;
+    align-items: center;
+}
+
+.signf .pshow
+{
+    width: 100%;
+}
+.signf .pshow img
+{
+    width: 100%;
+    filter: brightness(50%);
+    transition: filter 300ms;
+    z-index: 1;
+}
+
+.signf .pshow img:hover
+{
+    filter: brightness(100%);
+    transition: filter 300ms;
+    cursor: pointer;
+
+}
+.signf #ermsg
+{
+    margin-top: -1rem;
+    display: none;
+}
+
+.signf form
+{
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signf form div div
+{
+    margin: 1rem;
+}
+
+@media (max-width:1400px) {
+    .signf form
+    {
+        width: 100%;
+    }
+
+}
+@media (max-width:1120px) {
+    .signf
+    {
+        padding: 2% 15%;
+    }
+
+
+}
+
+@media (max-width:700px) {
+    .signf
+    {
+        padding: 2% 5%;
+    }
+    .signf input, .signf .btns button 
+    {
+        font-size: 1.6rem;
+    }
+    .signf p
+    {
+        font-size: 1.6rem;
+
+    }
+    .signf div
+    {
+        width: 90%;
+    }
+    .signf .res
+    {
+        padding: 1rem 0;
+    }
+
+    .signf .canc
+    {
+        padding: 1rem .5rem 1rem 0;
+    }
+
+    .signf .sub 
+    {
+        padding: 1rem 0 1rem .5rem;
+    }
+    .signf .btns button 
+    {
+        width: 33%;
+    }
+    .signf input
+    {
+        padding: 1rem;
+    }
+    .signf .pass
+    {
+        width: 90%;
+    }
+
+}

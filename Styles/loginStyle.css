@@ -191,7 +191,7 @@ form
     outline: none;
 }
 
-.btns
+.logWrap .btns
 {
     width: 100%;
     display: flex;
@@ -199,7 +199,7 @@ form
     gap: 0rem;
 }
 
-.btns button
+.logWrap .btns button
 {
     background: transparent;
     color: rgba(255, 255, 255, .8);
@@ -211,7 +211,7 @@ form
     font-family: title;
 
 }
-.res
+.logWrap .res
 {
     border-radius: 0rem 4rem 4rem 0rem;
     padding: 1.4rem 5rem 1.4rem 4.2rem;
@@ -220,26 +220,26 @@ form
 
 }
 
-.sub 
+.logWrap .sub 
 {
     border-radius: 4rem 0rem 0rem 4rem;
     padding: 1.4rem 4rem 1.4rem 5rem;
     border: solid rgba(255, 255, 255, .2) .2rem;
     border-right: solid rgba(255, 255, 255, .2) .2rem;
 }
-.sub:hover
+.logWrap .sub:hover
 {
     background-color: rgba(255, 255, 255, .4);
 
     backdrop-filter: brightness(200%);
 }
-.res:hover
+.logWrap .res:hover
 {
     background-color: rgba(255, 255, 255, .4);
 
     backdrop-filter: brightness(200%);    
 } 
-.sub:active
+.logWrap .sub:active
 {
     box-shadow: 0 0 1rem #fff;
     color: black;
@@ -248,7 +248,7 @@ form
 
 }
 
-.res:active
+.logWrap .res:active
 {
     box-shadow: 0 0 1rem #fff;
     color: black;
@@ -257,7 +257,7 @@ form
 
 }
 
-.pass
+.logWrap .pass
 {
     width: 100%;
     display: grid;
@@ -267,11 +267,11 @@ form
     align-items: center;
 }
 
-.pshow
+.logWrap .pshow
 {
     width: 100%;
 }
-.pshow img
+.logWrap .pshow img
 {
     width: 100%;
     filter: brightness(50%);
@@ -279,14 +279,14 @@ form
     z-index: 1;
 }
 
-.pshow img:hover
+.logWrap .pshow img:hover
 {
     filter: brightness(100%);
     transition: filter 300ms;
     cursor: pointer;
 
 }
-#ermsg
+.logWrap #ermsg
 {
     margin-top: -1rem;
     display: none;
@@ -409,13 +409,13 @@ form
     {
         font-size: 1.6rem;
     }
-    .btns button
+    .logWrap .btns button
     {
         font-size: 1.4rem;
     }
 
 
-    .wrap input
+    .logWrap input
     {
         font-size: 1.4rem;
     }

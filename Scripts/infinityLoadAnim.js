@@ -27,7 +27,7 @@ function RGBA(mainCode, props) {
     gl.bufferData(gl.ARRAY_BUFFER, triangle, gl.STATIC_DRAW);
     let vert = gl.getAttribLocation(program, "vert");
     gl.vertexAttribPointer(vert, 2, gl.FLOAT, 0, 0, 0);
-    gl.enableVertexAttribArray(vert);
+    gl.enableVertexAttribArray(vert); 
 
     let capturer;
 

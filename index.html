@@ -19,13 +19,37 @@
         <script src="Scripts/loadingScript.js"></script>
         <script src="Scripts/loginScript.js"></script>
         <link rel="stylesheet" href="Styles/loginStyle.css">    
+        <link rel="stylesheet" href="Styles/signupStyle.css">    
     </head>
 <body>
     <div class="loadMobile">
         <div class="infinity" id="loader"></div>
     </div>
     <script id="rendered-js" class="loadAnimScripts">load()</script>
-    
+    <div class="signwrap">
+        <div class="signf">
+            <p>To create a new account, please fill in with the username you wish to use and your password.</p>
+            <p class="errsig" style="color: red;">Error</p>
+            <form action="">
+                <div>
+                    <div>
+                        <input type="text" placeholder="Username" required class="inUname" autocomplete="off">
+                    </div>
+                    <div class="pass">
+                        <input type="password" id="passinS" placeholder="Password" required autocomplete="off">
+                        <div class="pshow" style="margin: 0;" onclick="togglePasswordVisibilitySig()">
+                            <img src="Images/Misc/eye.png" id="eyeimgS">
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <button type="submit" class="sub">Log in</button>
+                        <button type="reset" class="res">Reset</button>
+                        <button type="button" onclick="cancelsup()" class="canc">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="wrap" onmouseenter="toggleTint()" onmouseleave="toggleTint()">
         <div class="logImg">
             <img src="Images/Logos/logo_white.png" alt="infinity watches' logo">
@@ -44,7 +68,7 @@
                 </div>
                 <div class="pass">
                     <input type="password" id="passin" placeholder="Password" required autocomplete="off">
-                    <div class="pshow" style="margin: 0;" onclick="togglePasswordVisibility()">
+                    <div class="pshow" style="margin: 0;" onclick="togglePasswordVisibilityLog()">
                         <img src="Images/Misc/eye.png" id="eyeimg">
                     </div>
                 </div>
@@ -53,7 +77,7 @@
                     <button type="reset" class="res">Reset</button>
                 </div>
                 <div>
-                    <p>Don't have an account? <a href="">Sign up</a> now!</p>
+                    <p>Don't have an account? <a href="#" onclick="showsign()">Sign up</a> now!</p>
                 </div>
             </form>
         </div>
