@@ -30,19 +30,34 @@
         <div class="signf">
             <p>To create a new account, please fill in with the username you wish to use and your password.</p>
             <p class="errsig" style="color: red;">Error</p>
-            <form action="">
+            <form action=""  id="val" novalidate>
                 <div>
                     <div>
-                        <input type="text" placeholder="Username" required class="inUname" autocomplete="off">
+                        <input type="text" placeholder="Firstname" required class="inUname" id="firstname" autocomplete="off">
+                        <p id="fr"></p>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Lastname" required class="inUname" id="lastname" autocomplete="off">
+                        <p id="ls"></p>
+                    </div>
+                    <div>
+                        <select class="form-select" id="gender" class="inUname" name="gender" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <p id="fd"></p>
                     </div>
                     <div class="pass">
                         <input type="password" id="passinS" placeholder="Password" required autocomplete="off">
                         <div class="pshow" style="margin: 0;" onclick="togglePasswordVisibilitySig()">
                             <img src="Images/Misc/eye.png" id="eyeimgS">
                         </div>
+                        <p id="ps"></p>
+                        
                     </div>
                     <div class="btns">
-                        <button type="submit" class="sub">Log in</button>
+                        <button type="submit" class="sub">Sing up</button>
                         <button type="reset" class="res">Reset</button>
                         <button type="button" onclick="cancelsup()" class="canc">Cancel</button>
                     </div>
@@ -58,13 +73,13 @@
             <h1>Infinity Watches</h1>
         </div>
         <div class="logWrap">
-            <form action="">
+            <form action="" onsubmit="return verif()">
                 <div class="welc">
                     <p>Welcome to <span>Infinity Watches'</span> official website, please log in to continue.</p>
                 </div>
                 <p id="ermsg" style="color: red;">Error</p>
                 <div>
-                    <input type="text" placeholder="Username" required class="inUname" autocomplete="off">
+                    <input type="text" placeholder="Username" id="namelog" required class="inUname" autocomplete="off">
                 </div>
                 <div class="pass">
                     <input type="password" id="passin" placeholder="Password" required autocomplete="off">
@@ -82,6 +97,7 @@
             </form>
         </div>
     </div>
+    <script src="Scripts/verif.js"></script>
 
 </body>
 </html>
