@@ -1,0 +1,107 @@
+.prods
+{
+    margin-top: 2%;
+}
+.prods h1
+{
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: logotext;
+    font-size: 4rem;
+    user-select: none;
+}
+.product-name
+{
+    margin-top: .5rem;
+    font-family: textf;
+    font-size: 1.6rem;
+}
+.product-card {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+.product-card .product-name {
+    font-weight: bold;
+}
+
+
+.panier
+{
+    z-index: 1001;
+    position: fixed;
+    margin: 5rem;
+    bottom: 0;
+    left: 0;
+}
+.panier i
+{
+    color: rgba(255, 255, 255, 0.379);
+    transition: 450ms;
+
+}
+.panier a
+{   
+    border: 2px rgba(255, 255, 255, 0.379) solid;
+
+    text-align: center;
+    padding: 0 1.2rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.379);
+    font-size: 7rem;
+    background-color: #1A1A1C;
+    border-radius: 100%;
+    transition-duration: 300ms;
+}
+
+
+
+.panier a:hover
+{
+    color: #fff;
+    border: 2px rgba(255, 255, 255, 1) solid;
+    transition-duration: 300ms;
+    cursor: pointer;
+
+}
+.panier a:hover > i
+{
+    color: #fff;
+    transition-duration: 450ms;
+
+}
+
+.panContainer
+{
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+.panieraff
+{
+    display: none;
+}
+.showcart
+{
+    padding: 2%;
+    z-index: 1000;
+    background-color: #1a1a1cd4;
+    backdrop-filter: blur(10px) brightness(200%);
+    width: 100%;
+    height: 80vh;
+    border-top: rgba(255, 255, 255, 1) 4px solid;
+    border-bottom: rgba(255, 255, 255, 1) 4px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+}
+

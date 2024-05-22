@@ -42,15 +42,49 @@ body
 {
     font-size: 1.6rem;
 
-    color: white;
 
     margin: 0;
     padding: 0;
 
-    background-color: #1A1A1C;
 }
 img
 {user-select: none;}
 
 /* #endregion */
 
+footer
+{
+    padding-top: 1%;
+    margin-top: .5%;
+    background-color:rgba(212, 212, 212, 0.6);
+}
+
+footer h5
+{
+    font-family: title;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+footer p
+{
+    font-family: textf;
+    font-size: 1.6rem;
+}
+
+
+.toprow
+{
+    justify-content: center;
+    text-align: center;
+}
+
+.botrow
+{
+    font-weight: bold;
+    padding: 2rem 0 1rem;
+    background-color: rgba(212, 212, 212, 0.762);
+    width: 100vw;
+    margin-top: 2%;
+    text-align: center;
+}

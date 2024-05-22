@@ -46,9 +46,11 @@ function hideLoader() {
         }, 1500);
     });
 
-    var sound = new Audio("../Sounds/Login.mp3");
-    sound.play();
-
+    if(window.location.pathname == "/")
+    {
+        var sound = new Audio("../Sounds/Login.mp3");
+        sound.play();
+    }
     setTimeout(stopWebGLRendering,1500);
 }
 

@@ -30,6 +30,8 @@
 :root{
     font-size: 62.5%;
 }
+
+
 html
 {
     scroll-behavior: smooth;
@@ -166,6 +168,7 @@ form
 {
     width: 95%;
 }
+
 .logWrap input
 {
     border: rgba(255, 255, 255, .2) .2rem solid;
@@ -289,9 +292,7 @@ form
 .logWrap #ermsg
 {
     margin-top: -1rem;
-    display: none;
 }
-
 
 @media (max-width:1400px) {
     body

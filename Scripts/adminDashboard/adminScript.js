@@ -160,7 +160,7 @@ function Table() {
               <td>${user.nom}</td>
               <td>${user.gender}</td>
               <td>${user.modpasse}</td>
-              <td><button class="btn btn-danger" onclick="removeUser(${index})">Delete</button></td>
+              <td><button class="btn btn-danger" onclick="removeUser(${index})">Delete User</button></td>
           </tr>
       `;
       tbody.innerHTML += userRow;
@@ -184,9 +184,9 @@ document.getElementById('userForm').addEventListener('submit', Submit);
 // table when page loads
 document.addEventListener('DOMContentLoaded', Table);
 function logout() {
-  var a = confirm("Do you want to logout");
+  var a = confirm("Do you want to logout?");
   if (a) {
-      window.location.href = "log2.html";
+      window.location.href = "index.html";
   } else {
       return false;
   }

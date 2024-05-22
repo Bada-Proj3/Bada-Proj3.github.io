@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <title>Infinity Watches</title>
+
+        <link class="bsFiles" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" disabled>
+        <script class="bsFiles" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" disabled></script>
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="Styles/deskLoadStyle.css">
+        <link rel="stylesheet" href="Styles/mobileLoadStyle.css">
+        <link rel="icon" type="image/png" href="Images/Logos/logo_white.png">
+
+        <script src="Scripts/cart.js"></script>
+        <script src="Scripts/infinityLoadAnim.js" class="loadAnimScripts"></script>
+        <script src="Scripts/loadingScript.js"></script>
+        <script src="Scripts/sliderScript.js"></script>
+        <link rel="stylesheet" href="Styles/header.css">
+        <link rel="stylesheet" href="Styles/sliderStyle.css">    
+        <link rel="stylesheet" href="Styles/hfStyle.css">    
+        <link rel="stylesheet" href="Styles/footer.css">    
+
+        
+    </head>
+<body>
+    <div class="loadMobile">
+        <div class="infinity" id="loader"></div>
+    </div>
+    <script id="rendered-js" class="loadAnimScripts">load()</script>
+    <div class="panier">
+        <a onclick="toggleCart()">
+            <i class="bx bxs-watch"></i>
+        </a>
+    </div>
+    <div class="panContainer">
+        <div class="panieraff showcart">
+            <div class="panierContent">
+                <!-- Hot el objets lenna -->
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium ipsam esse velit veniam repellendus non dolorem, quasi quos alias molestiae quisquam inventore ad error tenetur perferendis fuga aperiam quaerat similique.
+            </div>
+        </div>
+    </div>
+    <header>
+        <div>
+            <img src="Images/Logos/logo_gray.png" alt="">
+        </div>
+        <h1>Infinity Watches</h1>
+    </header>
+    
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="slide-radio-btn" id="slideRadio1" onclick="counter = 1">
+            <input type="radio" name="slide-radio-btn" id="slideRadio2" onclick="counter = 2">
+            <input type="radio" name="slide-radio-btn" id="slideRadio3" onclick="counter = 3">
+            <input type="radio" name="slide-radio-btn" id="slideRadio4" onclick="counter = 4">
+
+            <div class="slide first">
+                <img src="Images/Backgrounds/loginWall.jpg">
+            </div>
+            <div class="slide">
+                <img src="Images/Backgrounds/loginWall.jpg">
+            </div>
+            <div class="slide">
+                <img src="Images/Backgrounds/loginWall.jpg">
+            </div>
+            <div class="slide">
+                <img src="Images/Backgrounds/loginWall.jpg">
+            </div>
+
+            <div class="slideAutoNav">
+                <div class="autoBtn1"></div>
+                <div class="autoBtn2"></div>
+                <div class="autoBtn3"></div>
+                <div class="autoBtn4"></div>
+            </div>
+            <div class="slideManualNav">
+                <label for="slideRadio1" class="manualBtn"></label>
+                <label for="slideRadio2" class="manualBtn"></label>
+                <label for="slideRadio3" class="manualBtn"></label>
+                <label for="slideRadio4" class="manualBtn"></label>
+            </div>
+        </div>
+    </div>
+    <div class="container prods">
+        <h1>Our Men's Watch Collection</h1>
+        <div class="row">
+            <div class="col-6 col-md-4 product-card">
+                <a href="#"><img src="Images/Backgrounds/mens4.jpg" alt="Watch 1" class="img-fluid"></a>
+                
+                <div class="product-name">Watch 1</div>
+                <div class="product-price">$100</div>
+            </div>
+            <div class="col-6 col-md-4 product-card">
+                <a href="#"><img src="Images/Backgrounds/mens4.jpg" alt="Watch 2" class="img-fluid"></a>
+                
+                <div class="product-name">Watch 2</div>
+                <div class="product-price">$150</div>
+            </div>
+            <div class="col-6 col-md-4 product-card">
+                <a href="#"><img src="Images/Backgrounds/mens4.jpg" alt="Watch 3" class="img-fluid"></a>
+                
+                <div class="product-name">Watch 3</div>
+                <div class="product-price">$200</div>
+            </div>
+            <div class="col-6 col-md-4 product-card">
+                <a href="#"><img src="Images/Backgrounds/mens4.jpg" alt="Watch 4" class="img-fluid"></a>
+                
+                <div class="product-name">Watch 4</div>
+                <div class="product-price">$250</div>
+            </div>
+            <div class="col-6 col-md-4 product-card">
+                <a href="#"><img src="Images/Backgrounds/mens4.jpg" alt="Watch 5" class="img-fluid"></a>
+                
+                <div class="product-name">Watch 5</div>
+                <div class="product-price">$300</div>
+            </div>
+            <div class="col-6 col-md-4 product-card">
+                <a href="#"><img src="Images/Backgrounds/mens4.jpg" alt="Watch 6" class="img-fluid"></a>
+                
+                <div class="product-name">Watch 6</div>
+                <div class="product-price">$350</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container py-4">
+          <div class="row toprow">
+                <div class="col-md-6">
+                    <h5>Our Locations</h5>
+                    <p>Le Cornice, Bizerte, Tunisia</p>
+                    <p>Les berges du lac, Tunis, Tunisia</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Our Contact</h5>
+                    <p>Phone: +216 98 775 xxx</p>
+                    <p>Email: example@gmail.com</p>
+                  </div>
+          </div>
+          
+        </div>
+        <div class="botrow">
+            <p>© 2024 Infinity Watches. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

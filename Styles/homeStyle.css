@@ -1,0 +1,205 @@
+/* #region template*/
+
+@font-face {
+    font-family: LogoText;
+    src: url(../Fonts/GreatVibes/GreatVibes-Regular.ttf);
+}
+@font-face {
+    font-family: Title;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+    font-family: TitleItalic;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Italic.ttf);
+}
+@font-face {
+    font-family: TitleBold;
+    src: url(../Fonts/Playfair/PlayfairDisplay-Bold.ttf);
+}
+@font-face {
+    font-family: TitleBoldItalic;
+    src: url(../Fonts/Playfair/PlayfairDisplay-BoldItalic.ttf);
+}
+@font-face {
+    font-family: textf;
+    src: url(../Fonts/OpenSans/OpenSans.ttf);
+}
+@font-face {
+    font-family: textf-light;
+    src: url(../Fonts/OpenSans/OpenSans-Light.ttf);
+}
+:root{
+    font-size: 62.5%;
+}
+
+
+html
+{
+    scroll-behavior: smooth;
+    
+}
+body
+{
+    font-size: 1.6rem;
+
+
+    margin: 0;
+    padding: 0;
+
+}
+img
+{user-select: none;}
+
+/* #endregion */
+
+.mainbody
+{
+    margin-top: .5%;
+    padding: 0 2%;
+}
+.gridrow
+{
+    gap: 1rem;
+
+}
+.watchcard
+{
+    background-position: center;
+    background-size: cover;
+
+    height: 75vh;   
+    padding: 0;
+
+}
+.watchcard h2
+{
+    font-family: titlebold;
+    font-size: 7rem;
+    user-select: none;
+    color: transparent;
+    text-align: center;
+    transition: color 400ms, text-shadow 400ms;
+    padding: 0 0 1rem 0;
+}
+.watchcard a
+{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: backdrop-filter 400ms;
+
+}
+
+.watchcard:hover > a
+{
+    backdrop-filter: blur(7px) brightness(80%);
+    transition: backdrop-filter 400ms;
+}
+
+.watchcard:hover > a > h2
+{
+    text-shadow: black -5px 5px;
+    width: 100%;
+    color: white;
+    transition: color 500ms 150ms, text-shadow 500ms 150ms;
+}
+#men
+{
+    background-image: url(../Images/Backgrounds/mens5.jpg);
+    
+}
+#women
+{
+    background-image: url(../Images/Backgrounds/ladies2.jpg);
+    background-position-y: 65%;
+}
+
+@media (max-width: 1200px)
+{
+    #men h2
+    {
+        width: 92%;
+    }
+    .mainbody
+    {
+        width: 80%;
+    }
+    .watchcard a
+    {
+        backdrop-filter: blur(0px) brightness(80%);
+        align-items: end;
+    }
+    .watchcard:hover > a
+    {
+        backdrop-filter: blur(0px) brightness(80%);
+    }
+    .watchcard h2
+    {
+        font-size: 7rem;
+        margin-bottom: 5%;
+        color: white;
+        text-shadow: black -5px 5px;
+
+    }
+}
+@media (max-width: 950px)
+{
+    .mainbody
+    {
+        width: 90%;
+    }
+    .watchcard
+    {
+
+        height: 80vh;   
+
+    }
+    .watchcard h2
+    {
+        font-size: 6rem;
+    }
+}
+@media (max-width: 700px)
+{
+    .mainbody
+    {
+        width: 90%;
+    }
+    .watchcard
+    {
+
+        height: 80vh;   
+
+    }
+    .watchcard h2
+    {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 500px)
+{
+    .mainbody
+    {
+        width: 96%;
+    }
+    .watchcard
+    {
+
+        height: 80vh;   
+
+    }
+    .watchcard a
+    {
+        backdrop-filter: brightness(60%);
+        align-items: center;
+
+    }
+    .watchcard h2
+    {
+        font-size: 4rem;
+    }
+}
