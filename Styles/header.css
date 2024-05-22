@@ -71,6 +71,17 @@ header h1
     user-select: none;
     text-shadow: #1a1a1c -3.5px 3.5px 4px; 
 }
+
+header a
+{
+    margin-top: -1%;
+    width: 8%;
+}
+header a img
+{
+    width: 100%;
+}
+
 header div
 {
     margin-top: -1%;
@@ -90,6 +101,10 @@ header div img
     {
         width: 8%;
     }
+    header a
+    {
+        width: 8%;
+    }
 }
 @media (max-width:1200px) {
     header div
@@ -100,12 +115,21 @@ header div img
     {
         margin-top: -1.5%;
     }
+    header a
+    {
+        width: 9%;
+    }
 }
 @media (max-width:900px) {
     header div
     {
         width: 12%;
     }
+    header a
+    {
+        width: 12%;
+    }
+    
 
 }
 @media (max-width:600px) {
@@ -117,6 +141,11 @@ header div img
     {
         width: 18%;
     }
+    header a
+    {
+        width: 18%;
+    }
+
 }
 
 @media (max-width:500px) {
@@ -132,4 +161,10 @@ header div img
     {
         width: 18%;
     }
+
+    header a
+    {
+        width: 18%;
+    }
+    
 }

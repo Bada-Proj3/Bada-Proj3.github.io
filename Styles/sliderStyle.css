@@ -5,7 +5,7 @@
     
     margin: 0 auto;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
 
 
@@ -30,6 +30,7 @@
     display: flex;
     width: 100vw;
     transition: 2000ms;
+    margin-top: -15vh;
 }
 
 .slide .textContainer
@@ -37,7 +38,7 @@
     z-index: 1;
     position: absolute;
     top: 0;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
 }
@@ -207,18 +208,23 @@
 
 @media (max-width: 480px) {
 /* #region SLIDER */
-.slide .textContainer
+
+.slides
 {
-    height: 100%;
+    margin-top: 0;
+    height: 30vh;
 }
-
-
 .slider
 {
     margin: 0 auto;
     width: 100vw;
     height: auto;
     overflow: hidden;
+}
+.slide
+{
+
+    margin-top: 0vh;
 }
 
 
@@ -271,7 +277,23 @@
     {   
         width: 100vw;
     }
-
+    .slides
+    {
+        margin-top: 0;
+        height: 35vh;
+    }
+    .slider
+    {
+        margin: 0 auto;
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+    .slide
+    {
+    
+        margin-top: 0vh;
+    }
     .slide .textContainer
     {
         height: 100%;
@@ -324,6 +346,23 @@
         height: 100%;
     }
 
+    .slides
+    {
+        margin-top: 0;
+        height: 45vh;
+    }
+    .slider
+    {
+        margin: 0 auto;
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+    .slide
+    {
+
+        margin-top: 0vh;
+    }
 
     .slideManualNav
     {
@@ -369,7 +408,23 @@
     {   
         width: 100vw;
     }
-    
+    .slides
+    {
+        margin-top: 0;
+        height: 70vh;
+    }
+    .slider
+    {
+        margin: 0 auto;
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+    .slide
+    {
+
+        margin-top: 0vh;
+    }
 
     .slideManualNav
     {

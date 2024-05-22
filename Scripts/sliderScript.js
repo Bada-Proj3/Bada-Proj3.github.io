@@ -1,4 +1,4 @@
-var counter = 2;
+var counter = 1;
 setInterval(function(){
     document.getElementById("slideRadio"+counter).checked = true;
 
@@ -9,4 +9,4 @@ setInterval(function(){
     {
         counter = 1;
     }
-}, 8000);
+}, 5000);

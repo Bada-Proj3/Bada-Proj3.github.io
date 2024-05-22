@@ -80,7 +80,7 @@
     width: 100vw;
     height: 100vh;
     position: fixed;
-    display: grid;
+    display: none;
     align-content: center;
     justify-items: center;
 }
@@ -105,3 +105,9 @@
 
 }
 
+@media (max-width:550px) {
+    .prods h1
+    {
+        font-size: 3rem;
+    }
+}
