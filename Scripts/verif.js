@@ -128,12 +128,8 @@ document.getElementById('val').addEventListener('submit', function(e) {
             users.push(user);
             localStorage.setItem('users', JSON.stringify(users));
             this.reset();
-            if(gender === "male"){
-                return window.location.href = "mens.html";
-            }
-            else{
-                return window.location.href = "womens.html";
-            }
+            return window.location.href = "home.html";
+
         
         }
     });
