@@ -2,6 +2,7 @@ function verifpass() {
     var passwd = document.getElementById('passinS').value;
     var hasInteger = /\d/;
     var hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+    var errorMessage= "";
 
     if (passwd.length < 8) {
         errorMessage = 'The password must be at least 8 characters long.';
@@ -11,7 +12,7 @@ function verifpass() {
         errorMessage = 'The password must contain at least one special character.';
     }
 
-    if (errorMessage != "") {
+    if (errorMessage !== "") {
         document.getElementById('ps').innerHTML = errorMessage;
         return false;
     } else {
@@ -22,7 +23,7 @@ function verifpass() {
 function verifPrenom() {
     clearSig();
     var prenom = document.getElementById('firstname').value.trim(); 
-    if (prenom != "") {
+    if (prenom !== "") {
         if (prenom.length >= 3 && chaineValide(prenom)) {
             return true;
         } else {
@@ -37,7 +38,7 @@ function verifPrenom() {
 function verifNom() {
     clearSig();
     var nom = document.getElementById('lastname').value.trim(); 
-    if (nom != "") {
+    if (nom !=="") {
         if (nom.length >= 3 && chaineValide(nom)) {
             return true;
         } else {
@@ -82,7 +83,13 @@ function verif(){
     } 
     for(let user of users){
         if(user.prenom === nom && passwd === user.modpasse){
-            window.location.href = "adminPage.html";
+            if(user.gender==="male"){
+                window.location.href = "mens.html";
+            }
+            else{
+                window.location.href = "womens.html";
+            }
+            
             return false;
             
         }
@@ -120,8 +127,13 @@ document.getElementById('val').addEventListener('submit', function(e) {
             let users = JSON.parse(localStorage.getItem('users')) || [];
             users.push(user);
             localStorage.setItem('users', JSON.stringify(users));
-            this.reset(); 
-            return window.location.href='adminPage.html';
+            this.reset();
+            if(gender === "male"){
+                return window.location.href = "mens.html";
+            }
+            else{
+                return window.location.href = "womens.html";
+            }
         
         }
     });

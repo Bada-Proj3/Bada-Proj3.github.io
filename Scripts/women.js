@@ -7,9 +7,7 @@ function displayProducts() {
     const products = JSON.parse(localStorage.getItem('products')) || [];
 
     products.forEach(product => {
-        if(product.gender === "male"){
-
-       
+        if(product.gender === "female"){
         const productCard = document.createElement('div');
         productCard.className = 'col-6 col-md-4 product-card';
 
@@ -34,5 +32,9 @@ function displayProducts() {
     }
     });
 
-    document.getElementById('prdct').innerText = products.length;
+    //document.getElementById('prdct').innerText = products.length;
 }
+/*********************************************************************************** */
+
+
+       

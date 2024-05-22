@@ -57,7 +57,9 @@
     transition-duration: 300ms;
 }
 
-
+.product-card{
+    cursor: pointer;
+}
 
 .panier a:hover
 {

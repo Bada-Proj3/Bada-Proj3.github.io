@@ -8,6 +8,7 @@ function addProduct() {
     const productBrand = document.getElementById('productBrand').value;
     const productDescription = document.getElementById('productDescription').value;
     const productImage = document.getElementById('productImage').files[0];
+    const genderprod = document.getElementById('gender').value;
     const productPrice = document.getElementById('productPrice').value;
 
     if (productName && productBrand && productDescription && productImage && productPrice) {
@@ -16,6 +17,7 @@ function addProduct() {
             const product = {
                 name: productName,
                 brand: productBrand,
+                gender:genderprod,
                 description: productDescription,
                 image: e.target.result,
                 price: productPrice
@@ -55,6 +57,7 @@ function displayProducts() {
                     <div class="card-body">
                         <h5 class="card-title">${product.name}</h5>
                         <p class="card-text"><strong>Marque:</strong> ${product.brand}</p>
+                        <p class="card-text"><strong>gender:</strong> ${product.gender}</p>
                         <p class="card-text">${product.description}</p>
                         <p class="card-text"><strong>Prix:</strong> ${product.price} €</p>
                         <button class="btn btn-danger" onclick="removeProduct(${index})">Supprimer</button>

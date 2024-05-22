@@ -77,17 +77,6 @@ function veriflist() {
   }
 }
 
-
-
-  function nox() {
-      if (verifNom() && verifpass() && verifPrenom() &&  veriflist()) {
-          
-          
-      } else {
-          
-         
-      }
-  }
 var n=0;
 function toggleDisplay() {
   const cont = document.getElementById('cont');
@@ -100,6 +89,7 @@ function updateNumbers() {
 
 
 function Submit(e) {
+  if(verifNom() && verifpass() && verifPrenom() &&  veriflist()){
   e.preventDefault();
   const prenom = document.getElementById('prenom').value;
   const nom = document.getElementById('nom').value;
@@ -119,7 +109,7 @@ function Submit(e) {
   localStorage.setItem('users', JSON.stringify(users));
   Table();
   document.getElementById('userForm').reset();
- 
+  }
 }
 
 
