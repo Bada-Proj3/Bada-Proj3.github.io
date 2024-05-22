@@ -84,3 +84,11 @@ const hamBurge = document.getElementById("kk");
 hamBurge.addEventListener("click", function () {
 document.querySelector("#sidebar").classList.toggle("expand");
 });
+function logout() {
+    var a = confirm("Do you want to logout?");
+    if (a) {
+        window.location.href = "index.html";
+    } else {
+        return false;
+    }
+  }
