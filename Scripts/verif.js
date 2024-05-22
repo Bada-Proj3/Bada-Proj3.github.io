@@ -84,10 +84,10 @@ function verif(){
     for(let user of users){
         if(user.prenom === nom && passwd === user.modpasse){
             if(user.gender==="male"){
-                window.location.href = "mens.html";
+                window.location.href = "home.html";
             }
             else{
-                window.location.href = "womens.html";
+                window.location.href = "home.html";
             }
             
             return false;

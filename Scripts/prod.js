@@ -59,8 +59,9 @@ function displayProducts() {
                         <p class="card-text"><strong>Marque:</strong> ${product.brand}</p>
                         <p class="card-text"><strong>gender:</strong> ${product.gender}</p>
                         <p class="card-text">${product.description}</p>
-                        <p class="card-text"><strong>Prix:</strong> ${product.price} €</p>
+                        <p class="card-text"><strong>Prix:</strong> ${product.price} $</p>
                         <button class="btn btn-danger" onclick="removeProduct(${index})">Supprimer</button>
+                        <button class="btn btn-secondary" onclick="modifyProduct(${index})">Modifier</button>
                     </div>
                 </div>
             
@@ -76,6 +77,39 @@ function removeProduct(index) {
     products.splice(index, 1);
     localStorage.setItem('products', JSON.stringify(products));
     displayProducts();
+}
+
+let currentProductIndex;
+
+function modifyProduct(index) {
+    currentProductIndex = index;
+    let products = JSON.parse(localStorage.getItem('products')) || [];
+    let product = products[index];
+
+    document.getElementById('modifyProductName').value = product.name;
+    document.getElementById('modifyProductBrand').value = product.brand;
+    document.getElementById('modifyProductGender').value = product.gender;
+    document.getElementById('modifyProductDescription').value = product.description;
+    document.getElementById('modifyProductPrice').value = product.price;
+
+    var modifyProductModal = new bootstrap.Modal(document.getElementById('modifyProductModal'));
+    modifyProductModal.show();
+}
+
+function saveModifiedProduct() {
+    let products = JSON.parse(localStorage.getItem('products')) || [];
+
+    products[currentProductIndex].name = document.getElementById('modifyProductName').value;
+    products[currentProductIndex].brand = document.getElementById('modifyProductBrand').value;
+    products[currentProductIndex].gender = document.getElementById('modifyProductGender').value;
+    products[currentProductIndex].description = document.getElementById('modifyProductDescription').value;
+    products[currentProductIndex].price = document.getElementById('modifyProductPrice').value;
+
+    localStorage.setItem('products', JSON.stringify(products));
+    displayProducts();
+
+    var modifyProductModal = bootstrap.Modal.getInstance(document.getElementById('modifyProductModal'));
+    modifyProductModal.hide();
 }
 const hamBurger = document.querySelector(".one");
 
