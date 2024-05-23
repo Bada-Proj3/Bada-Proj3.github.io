@@ -1,9 +1,9 @@
 window.addEventListener("load", () => {
-    setTimeout(hideLoader, 0);
-    setTimeout(loadBs, 0);
+    setTimeout(hideLoader, 4000);
+    setTimeout(loadBs, 4000);
 });
 
-let webglContexts = []; // Array to store WebGL contexts
+let webglContexts = []; 
 
 function hideLoader() {
     var loader = document.getElementById('loader');
@@ -23,10 +23,10 @@ function hideLoader() {
         setTimeout(() => {
             canvas.parentNode.removeChild(canvas);
         }, 1500);
-        // Check if the canvas has a WebGL context
+
         const context = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
         if (context) {
-            webglContexts.push(context); // Store WebGL context for later use
+            webglContexts.push(context);
         }
     });
 
@@ -55,11 +55,11 @@ function hideLoader() {
 }
 
 function stopWebGLRendering() {
-    // Iterate over stored WebGL contexts and disable rendering
+
     webglContexts.forEach(context => {
         const ext = context.getExtension('WEBGL_lose_context');
         if (ext) {
-            ext.loseContext(); // Lose WebGL context to stop rendering
+            ext.loseContext();
         }
     });
 }
@@ -106,7 +106,6 @@ function load() {
         record: false
     });
     } else {
-        // Show the loader
         loader.style.display = 'block';
     }
 }
