@@ -98,13 +98,11 @@ function modifyProduct(index) {
 
 function saveModifiedProduct() {
     let products = JSON.parse(localStorage.getItem('products')) || [];
-
     products[currentProductIndex].name = document.getElementById('modifyProductName').value;
     products[currentProductIndex].brand = document.getElementById('modifyProductBrand').value;
     products[currentProductIndex].gender = document.getElementById('modifyProductGender').value;
     products[currentProductIndex].description = document.getElementById('modifyProductDescription').value;
     products[currentProductIndex].price = document.getElementById('modifyProductPrice').value;
-
     localStorage.setItem('products', JSON.stringify(products));
     displayProducts();
 

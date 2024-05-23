@@ -16,7 +16,8 @@
             margin-top: 50px;
             bottom: 20px;
         }
-      
+        
+
     </style>
 </head>
 <body>
@@ -90,6 +91,9 @@
                         <button class="toggle-btn navimg" type="button" id="kk">
                             <img src="Images/Logos/logo_white.png" alt="">
                         </button>
+                        <div id="recherche">
+                            <input class="form-control" list="datalistOptions"  id="searchInput" onkeypress=" searchProducts()" placeholder="Type to search...">
+                        </div>
                         <div id="product">
                             <a class="nav-link" href="#"><i class='bx bxs-watch'></i></a>  
                             <span id="prdct" class="badge bg-danger">0</span>
@@ -143,5 +147,43 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="Scripts/prod.js"></script>
+    <script>
+        function searchProducts() {
+        const searchValue = document.getElementById("searchInput").value.toLowerCase();
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        const filteredProducts = products.filter((product) => {
+          return (
+            product.name.toLowerCase().includes(searchValue) ||
+            product.description.toLowerCase().includes(searchValue)
+          );
+        });
+
+        const productList = document.getElementById("productList");
+        productList.innerHTML = ""; 
+
+        filteredProducts.forEach(function (product, index) {
+            const productCard = document.createElement('div');
+        productCard.className = 'card';
+        productCard.innerHTML = `
+                    <img src="${product.image}" class="img-fluid rounded-start" alt="${product.name}">
+                
+                <div 
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text"><strong>Marque:</strong> ${product.brand}</p>
+                        <p class="card-text"><strong>gender:</strong> ${product.gender}</p>
+                        <p class="card-text">${product.description}</p>
+                        <p class="card-text"><strong>Prix:</strong> ${product.price} $</p>
+                        <button class="btn btn-danger" onclick="removeProduct(${index})">Supprimer</button>
+                        <button class="btn btn-secondary" onclick="modifyProduct(${index})">Modifier</button>
+                    </div>
+                </div>
+            
+        `;
+        productList.appendChild(productCard);
+    });
+      }
+
+    </script>
 </body>
 </html>

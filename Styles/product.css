@@ -320,7 +320,20 @@ aside {
     min-width: 200px;
 }
 
+#recherche{
+    width: 30%;
+    margin-right: 1%;
+}
+#recherche input
+{
+    font-size: 1.6rem;
+    font-family: textf;
+    border-radius: 3rem;
+    padding: 1rem 2rem;
+    background-color: white;
+    border: rgba(0, 0, 0, .1) .2rem solid;
 
+}
 
 .ajouter button
 {
@@ -386,6 +399,19 @@ form label
     
     .form-control{
         font-size: 10px;
+    }#recherche{
+        width: 60%;
+        margin-right: 1%;
+    }
+    #recherche input
+    {
+        font-size: 1.6rem;
+        font-family: textf;
+        border-radius: 3rem;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        border: rgba(0, 0, 0, .1) .2rem solid;
+    
     }
 }
 
@@ -521,6 +547,52 @@ form label
     .navbar-expand {
         align-items: center;
     }
+    #recherche{
+        width: 40%;
+        margin-right: 1%;
+    }
+    #recherche input
+    {
+        font-size: 1rem;
+        font-family: textf;
+        border-radius: 3rem;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        border: rgba(0, 0, 0, .1) .2rem solid;
+    
+    }
+}
+
+@media (max-width: 290px) {
+   
+    #recherche{
+        width: 20%;
+        margin-right: 1%;
+    }
+    #recherche input
+    {
+        font-size: 0.7rem;
+        font-family: textf;
+        border-radius: 3rem;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        border: rgba(0, 0, 0, .1) .2rem solid;
+    
+    }
+    .nav img {
+        width: 20px;
+    }
+    .bxs-watch {
+        font-size: 10px;
+        color: #fff;
+    }
+       
+#prdct {
+    top: 21px;
+    right: 15px;
+    padding: 1px 2px;
+    font-size: 5px;
+}
 }
 
 @media (max-width: 900px) {
@@ -617,7 +689,7 @@ form label
     }
 
     #recherche{
-        width: 130%;
+        width: 60%;
         margin-right: 1%;
     }
 
